@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: nodeapp
   labels:
-    chart: "nodeapp-0.0.2"
+    chart: "nodeapp-0.0.3"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'nodeapp'

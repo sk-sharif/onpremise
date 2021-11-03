@@ -199,13 +199,13 @@
   path: helmfiles/jx-staging/helmfile.yaml
   releases:
   - apiVersion: v1
-    appVersion: 0.0.2
+    appVersion: 0.0.3
     description: A Helm chart for Kubernetes
-    firstDeployed: "2021-11-03T09:49:27Z"
+    firstDeployed: "2021-11-03T10:11:44Z"
     icon: https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png
-    lastDeployed: "2021-11-03T09:49:27Z"
+    lastDeployed: "2021-11-03T10:11:44Z"
     name: nodeapp
     repositoryName: dev
     repositoryUrl: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
     resourcePath: config-root/namespaces/jx-staging/nodeapp
-    version: 0.0.2
+    version: 0.0.3
