@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - sk-sharif/node
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - sk-sharif/nodeapp
       require_self_approval: true
     cat: {}
@@ -20,6 +24,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      sk-sharif/node:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       sk-sharif/nodeapp:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -35,6 +44,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      sk-sharif/node:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       sk-sharif/nodeapp:
       - approve
       - assign
@@ -79,6 +104,9 @@ data:
     triggers:
     - repos:
       - sk-sharif/onpremise
+      trusted_org: todo
+    - repos:
+      - sk-sharif/node
       trusted_org: todo
     - repos:
       - sk-sharif/nodeapp
