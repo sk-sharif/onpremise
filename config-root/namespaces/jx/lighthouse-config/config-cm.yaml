@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - sk-sharif/onpremise
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.13.59.1.201.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
