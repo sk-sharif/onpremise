@@ -17,16 +17,20 @@ spec:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: sk-sharif
+    repository: onpremise
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: 13.59.1.201.nip.io
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: sk-sharif
   repository: bucketrepo
   secretStorage: local
   vault: {}

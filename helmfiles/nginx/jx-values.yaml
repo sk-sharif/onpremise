@@ -33,6 +33,8 @@ jxRequirements:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: sk-sharif
+    repository: onpremise
   - key: staging
   - key: production
   ingress:
@@ -43,6 +45,8 @@ jxRequirements:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: sk-sharif
   repository: bucketrepo
   secretStorage: local
   vault: {}
