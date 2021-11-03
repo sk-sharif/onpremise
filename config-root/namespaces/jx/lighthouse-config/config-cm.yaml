@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        sk-sharif/nodeapp: true
         sk-sharif/onpremise: true
     plank: {}
     pod_namespace: jx
@@ -19,6 +20,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        sk-sharif/nodeapp: merge
         sk-sharif/onpremise: merge
       queries:
       - labels:
@@ -31,6 +33,7 @@ data:
         - needs-rebase
         repos:
         - sk-sharif/onpremise
+        - sk-sharif/nodeapp
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +44,7 @@ data:
         - needs-rebase
         repos:
         - sk-sharif/onpremise
+        - sk-sharif/nodeapp
       target_url: http://lighthouse-jx.13.59.1.201.nip.io/merge/status
 kind: ConfigMap
 metadata:
