@@ -1,0 +1,10 @@
+# Source: nodeapp/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nodeapp-nodeapp
+  annotations:
+    meta.helm.sh/release-name: 'nodeapp'
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
