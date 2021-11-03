@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: sk-sharif
+    provider: github
+    repository: node
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: sk-sharif-node
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/sk-sharif/node.git
+  org: sk-sharif
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: node
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/sk-sharif/node
