@@ -9,7 +9,7 @@ repositories:
   url: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
 releases:
 - chart: dev/nodeapp
-  version: 0.0.1
+  version: 0.0.2
   name: nodeapp
   values:
   - jx-values.yaml
