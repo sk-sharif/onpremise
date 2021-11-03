@@ -1,0 +1,61 @@
+# Source: nodeapp/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp-nodeapp
+  labels:
+    draft: draft-app
+    chart: "nodeapp-0.0.2"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'nodeapp'
+    wave.pusher.com/update-on-config-change: 'true'
+  namespace: jx-production
+spec:
+  selector:
+    matchLabels:
+      app: nodeapp-nodeapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        draft: draft-app
+        app: nodeapp-nodeapp
+    spec:
+      serviceAccountName: nodeapp-nodeapp
+      containers:
+        - name: nodeapp
+          image: "ghcr.io/sk-sharif/nodeapp:0.0.2"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VERSION
+              value: 0.0.2
+          envFrom: null
+          ports:
+            - name: http
+              containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 400m
+              memory: 256Mi
+            requests:
+              cpu: 0.1
+              memory: 128Mi
+      terminationGracePeriodSeconds:
+      imagePullSecrets:
+        - name: "tekton-container-registry-auth"
